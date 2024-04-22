@@ -4,6 +4,7 @@
 
 <template>
   <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
+    <video v-if="blok?.show_video" class="bg-video" autoplay muted loop src="/assets/video.mp4" :style="{maxHeight: `${blok.height}px`}"></video>
     <div class="image-box" :style="{minHeight: `${blok.height}px`}">
       <NuxtImg 
         v-if="blok?.background_image?.filename" 
@@ -14,7 +15,7 @@
         :style="{maxHeight: `${blok?.height}px`}"
       />
       <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
-        <div class="text-white flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
+        <div class="text-white font-bold flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
           <h1 class="mb-3 z-30 font-heading" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Page Title' }}</h1>
           <p class="font-light z-30" :style="{color: blok.text_color?.color}">{{ blok?.text }}</p>
           <div class="mt-10 flex flex-wrap z-30" v-if="blok?.buttons">
@@ -44,5 +45,18 @@
   height: 100%;
   max-height: 800px;
   object-fit: cover; /* Zoom in while preserving aspect ratio */
+}
+
+.bg-video {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  min-width: 100%;
+  width: auto;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers entire space */
+  z-index:10;
+  filter: opacity(.5);
 }
 </style>

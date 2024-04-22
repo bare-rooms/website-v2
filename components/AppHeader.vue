@@ -59,8 +59,7 @@
 </script>
 
 <template>
-  <header class="fixed inset-x-0 top-0 z-50 transition duration-500" v-if="showHeader" 
-    :class="!isScrolled && changeOnScroll ? 'bg-transparent text-white': 'bg-white text-gray-800'">
+  <header class="fixed inset-x-0 top-0 z-50 transition duration-500" v-if="showHeader" style="background-color: rgba(53,53,56,.6)">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">
@@ -74,14 +73,14 @@
       </div>
       <div class="flex lg:hidden">
         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 " 
-          @click="mobileMenuOpen = true" :class="isScrolled ? 'text-gray-700' : 'text-white'">
+          @click="mobileMenuOpen = true" :class="isScrolled ? 'text-white' : 'text-white'">
           <span class="sr-only">Open main menu</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
       <div class="hidden lg:flex items-center lg:gap-x-12">
         <AppLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" 
-          class=" font-semibold leading-6 hover:text-secondary"
+          class=" font-semibold leading-6 text-white hover:text-secondary"
         >
           {{ blok.text }}
         </AppLink>
@@ -96,7 +95,7 @@
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-50" />
       <DialogPanel 
-        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-black"
       >
         <div class="flex items-center justify-between">
           <NuxtLink to="/" class="-m-1.5 p-1.5" @click="mobileMenuOpen = false">
@@ -109,7 +108,7 @@
               placeholder provider="storyblok"
             />
           </NuxtLink>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-100" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
           </button>
@@ -118,7 +117,7 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <AppLink v-for="link in headerMenu" :key="link.name" :to="link.url" @click="mobileMenuOpen = false" 
-                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-900 hover:opacity-50 duration-500"
+                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-100 hover:opacity-50 duration-500"
                 >
                 {{ link.text }}
               </AppLink>

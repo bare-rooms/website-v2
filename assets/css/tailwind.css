@@ -31,6 +31,12 @@ h3{
 h4{
     @apply text-xl sm:text-3xl
 }
+h5{
+    @apply text-lg sm:text-2xl
+}
+h6{
+    @apply text-lg sm:text-xl
+}
 p{
     @apply text-sm sm:text-base
 }
