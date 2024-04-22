@@ -4,7 +4,7 @@
 
 <template>
   <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
-    <video v-if="blok?.show_video" class="bg-video" autoplay muted loop src="/assets/video.mp4" :style="{maxHeight: `${blok.height}px`}"></video>
+    <video v-if="blok?.show_video" class="bg-video" autoplay muted loop src="/assets/background.mp4" :style="{maxHeight: `${blok.height}px`}"></video>
     <div class="image-box" :style="{minHeight: `${blok.height}px`}">
       <NuxtImg 
         v-if="blok?.background_image?.filename" 
