@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="h-full w-full flex flex-col" :class="itemClass" 
+  <div v-editable="blok" class="h-full w-full flex flex-col overflow-hidden" :class="itemClass" 
   :style="{ backgroundColor: blok.background_color?.color, ...borderStyle }">
     <StoryblokComponent
       v-for="blok in blok.content"

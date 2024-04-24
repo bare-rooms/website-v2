@@ -15,9 +15,11 @@
         :style="{maxHeight: `${blok?.height}px`}"
       />
       <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
-        <div class="text-white font-bold flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
-          <h1 class="mb-3 z-30 font-heading" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Page Title' }}</h1>
-          <p class="font-light z-30" :style="{color: blok.text_color?.color}">{{ blok?.text }}</p>
+        <div class="text-white font-bold flex flex-col justify-center px-8 sm:px-24 lg:col-span-full" :class="blok.text_position">
+          <h1 class="mb-3 z-30 font-heading" :style="{color: blok.title_color?.color}" :class="{ 'text-center' : !!blok?.show_video }">
+            {{ blok?.title || 'Page Title' }}
+          </h1>
+          <h5 class="font-light z-30" :style="{color: blok.text_color?.color}">{{ blok?.text }}</h5>
           <div class="mt-10 flex flex-wrap z-30" v-if="blok?.buttons">
             <StoryblokComponent
               class="mr-3 mb-3 w-full sm:w-auto"

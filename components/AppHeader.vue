@@ -78,7 +78,7 @@
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <div class="hidden lg:flex items-center lg:gap-x-12">
+      <div class="hidden lg:flex items-center lg:gap-x-9 xl:gap-x-16">
         <AppLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" 
           class=" font-semibold leading-6 text-white hover:text-secondary"
         >
@@ -117,7 +117,7 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <AppLink v-for="link in headerMenu" :key="link.name" :to="link.url" @click="mobileMenuOpen = false" 
-                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-100 hover:opacity-50 duration-500"
+                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-100 duration-500 hover:bg-secondary hover:text-black"
                 >
                 {{ link.text }}
               </AppLink>
