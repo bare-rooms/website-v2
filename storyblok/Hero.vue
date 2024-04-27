@@ -20,7 +20,7 @@
             {{ blok?.title || 'Page Title' }}
           </h1>
           <h5 class="font-light z-30" :style="{color: blok.text_color?.color}">{{ blok?.text }}</h5>
-          <div class="mt-10 flex flex-wrap z-30" v-if="blok?.buttons">
+          <div class="mt-10 flex flex-wrap z-30" v-if="blok?.buttons" :class="{ 'justify-center items-center' : !!blok?.show_video }">
             <StoryblokComponent
               class="mr-3 mb-3 w-full sm:w-auto"
               v-for="blok in blok.buttons"
