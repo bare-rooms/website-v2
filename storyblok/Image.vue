@@ -13,7 +13,7 @@
       :alt="blok.image.alt" 
       :style="imageMaxHeight" 
       class="h-full" 
-      :class="{'w-full' : !!blok?.full_width}"
+      :class="{'w-full' : !!blok?.full_width, 'rounded-lg' : !!blok?.rounded}"
       placeholder provider="storyblok"
     />
   </div>
