@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -7,11 +5,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        heading: [process.env.HEADING_FONT_FAMILY, 'serif'],
-        text: [process.env.TEXT_FONT_FAMILY, 'sans-serif'],
+        heading: ["Poppins", 'serif'],
+        text: ["Work Sans", 'sans-serif'],
       },
       colors: {
-        secondary: process.env.SECONDARY_COLOR
+        secondary: "#ffde59"
       },
       screens: {
         xs: '495px'

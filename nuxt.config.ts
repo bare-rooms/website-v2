@@ -6,15 +6,15 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url: process.env.WEBSITE_URL,
-    name: process.env.WEBSITE_NAME
+    url: "https://barerooms.com",
+    name: "Barerooms"
   },
   modules: [
     '@nuxtjs/tailwindcss',
     ["@storyblok/nuxt", { 
       accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
       apiOptions: {
-        region: process.env.STORYBLOK_REGION || 'eu'
+        region: 'eu'
       } 
     }],
     '@nuxt/image',
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     ['nuxt-gtag', {
       id: process.env.GTAG_ID,
       config: {
-        page_title: process.env.WEBSITE_NAME
+        page_title: "Barerooms"
       }
     }] : null,
   ],
@@ -32,8 +32,7 @@ export default defineNuxtConfig({
   },
   image: {
     storyblok: {
-      baseURL: !!process.env.STORYBLOK_REGION 
-      ? `https://a-${process.env.STORYBLOK_REGION}.storyblok.com` : 'https://a.storyblok.com'
+      baseURL: 'https://a.storyblok.com'
     },
     dir: 'assets/img'
   },
@@ -45,8 +44,7 @@ export default defineNuxtConfig({
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com" },
-        { rel: "stylesheet", href: process.env.FONT_URL },
-        { rel: "stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css'}
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Work+Sans&family=Poppins&display=swap" },
       ],
       meta: [
         { name:"msapplication-TileColor", content:"#00aba9"},
